@@ -1,9 +1,9 @@
 import React from 'react';
-import { FormControl, Grid,Row,Col } from 'react-bootstrap';
+import { FormControl, Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import {setSensor , connectSensor,disConnectSensor} from '../actions/sensorActions';
+import { setSensor ,connectSensor ,disConnectSensor} from '../actions/sensorActions';
 import TrackerPad from './TrackerPad';
-import TrackerInput from './TrackerInput';
+import CheckBar from './CheckBar';
 import TrackerOutput from './TrackerOutput';
 
 const mapStateToProps = (state) => {
@@ -70,25 +70,25 @@ export default class TrackerUtilities extends React.Component {
               </Col>
 
               <Col xs={2} md={2}>
-                  <TrackerInput/>
+                  <CheckBar/>
               </Col>
             </Row>
             <Row className = 'show-grid'>
               <Col xs={2} md={2}>
                   <TrackerPad activeSensor = {this.props.activeSensor}
-                              isConnected ={this.props.isConnected}
-                              measureNumber={this.props.measureNumber}
-                              toggleNumber={this.props.toggleNumber}
-                              homeNumber={this.props.homeNumber}
-                              compItNumber={this.props.compItNumber}
-                              init={this.props.init}/>
+                    isConnected ={this.props.isConnected}
+                    measureNumber={this.props.measureNumber}
+                    toggleNumber={this.props.toggleNumber}
+                    homeNumber={this.props.homeNumber}
+                    compItNumber={this.props.compItNumber}
+                    init={this.props.init}/>
               </Col>
               <Col xs={10} md={10}>
-                  <TrackerOutput/>
+                <TrackerOutput />
               </Col>
 
             </Row>
-          </Grid>
+        </Grid>
       </div>
     );
   }

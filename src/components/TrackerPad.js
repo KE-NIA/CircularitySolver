@@ -1,7 +1,6 @@
 import React from 'react';
 import FaroIonButtons from './FaroIonButtons';
-import LeicaAt40xButtons from './LeicaButtons';
-import FaroVantageButtons from './FaroVantageButtons';
+
 
 export default class TrackerPad extends React.Component {
 

@@ -1,2 +1,2 @@
 # TrackerPad
-A small project for students to learn web development. Main focus is to control complex industrial measurement systems and to solve typical tasks of such a sensor.
+My BA-Thesis :) . Its About a simple webapplication for the measurment of e.g. circularity. As a fundamental i use the simple webapp for Tracker-Controls which are developed by the glorious sigma3d trainee.
