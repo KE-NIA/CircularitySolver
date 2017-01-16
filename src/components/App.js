@@ -1,3 +1,6 @@
+'use strict';
+
+
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import { Route, Router, hashHistory, IndexRoute } from 'react-router';

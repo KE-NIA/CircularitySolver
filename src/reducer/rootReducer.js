@@ -1,3 +1,5 @@
+'use strict';
+
 import { combineReducers } from 'redux';
 import sensorReducer from './sensorReducer';
 import mainReducer from './mainReducer';
