@@ -298,11 +298,6 @@ export  const sensorSocketMiddleware = store => next => action => {
           measure();
             break;
         }
-        case TWO_SIDE_MEASCONFIG_REQUEST: {
-          console.log('MW TWO_SIDE_MEASCONFIG_REQUEST')
-          twoSideMeasurementConfig();
-            break;
-    }
     return result;
 };
 }
