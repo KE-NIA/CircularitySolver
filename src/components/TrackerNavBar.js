@@ -13,24 +13,8 @@ export default class TrackerNavbar extends React.Component {
   render() {
       return(
         <div>
-          <Navbar inverse>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <a href="#/trackerutilities">s3DSensors</a>
-              </Navbar.Brand>
-            </Navbar.Header>
-            <Navbar.Collapse>
-              <Nav>
-                <li><a href="#/trackerutilities">TrackerUtilities</a></li>
-                <li><a href="#/facecheck">FaceCheck</a></li>
-              </Nav>
-              <Nav pullRight>
-                <NavItem >
-                  <TrackerStatus/>
-                </NavItem>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>{this.props.children}
+          <h1>HEADER</h1>
+          {this.props.children}
     </div>
       )
   }

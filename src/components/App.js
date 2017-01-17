@@ -3,27 +3,31 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import { Route, Router, hashHistory, IndexRoute } from 'react-router';
-import TrackerUtilities from './TrackerUtilities';
+import StartScreen from './StartScreen';
 import TrackerNavBar from './TrackerNavBar';
-import FaceCheck from './FaceCheck';
+import MeasureRefPlane from './MeasureRefPlane';
+import MeasureCircle from './MeasureCircle';
+import CircularityResult from './CircularityResult';
 
 
 export default class App extends React.Component {
-    constructor(props) {
-      super(props);
+   constructor(props) {
+     super(props);
 /**
 *Creates a router and sets the single paths for the single components
 *it also sets the history route
 *the index route sets the component which will shown, if the html page opens
 */
-    }
+   }
   render() {
     return (
       <Router history={hashHistory}>
         <Route path="/" component={TrackerNavBar}>
-          <IndexRoute component={TrackerUtilities} />
-          <Route path="/trackerutilities" component={TrackerUtilities} />
-          <Route path="/facecheck" component={FaceCheck} />
+          <IndexRoute component={StartScreen} />
+          <Route path="/startscreen" component={StartScreen} />
+          <Route path="/measurrefplane" component={MeasureRefPlane} />
+          <Route path="/measurecircle" component={MeasureCircle} />
+          <Route path="/circularityresult" component={CircularityResult} />
         </Route>
       </Router>
     );
