@@ -26,7 +26,7 @@ import {
  // initial state for the sensor object
 const initialSensor = {
   activeSensor: 'none', // name as string of the sensor
-  sensorTypes: ['blabla',
+  sensorTypes: ['none',
     'FaroIon',
     'FaroVantage',
     'LeicaAt40x'], // all available sensor types

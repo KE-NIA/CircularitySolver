@@ -1,11 +1,11 @@
 'use strict';
 
-
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import { Route, Router, hashHistory, IndexRoute } from 'react-router';
 import TrackerUtilities from './TrackerUtilities';
 import TrackerNavBar from './TrackerNavBar';
+import FaceCheck from './FaceCheck';
 
 
 export default class App extends React.Component {
@@ -23,6 +23,7 @@ export default class App extends React.Component {
         <Route path="/" component={TrackerNavBar}>
           <IndexRoute component={TrackerUtilities} />
           <Route path="/trackerutilities" component={TrackerUtilities} />
+          <Route path="/facecheck" component={FaceCheck} />
         </Route>
       </Router>
     );

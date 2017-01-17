@@ -2,15 +2,14 @@
 
 import { combineReducers } from 'redux';
 import sensorReducer from './sensorReducer';
-import mainReducer from './mainReducer';
-
+import trackerReducer from './trackerUtilReducer';
 
 /**
  * Combines the reducers to one root reducer.
  */
 const rootReducer = combineReducers({
-  sensor: sensorReducer,
-  main: mainReducer,
+  tracker: trackerReducer,
+   sensor: sensorReducer
 
 });
 

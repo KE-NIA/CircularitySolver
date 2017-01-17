@@ -8,6 +8,7 @@ import {connect} from "react-redux";
 const mapStateToProps = state => {
     return{
       isConnected: state.sensor.isConnected,
+      measurementConfig: state.tracker.measurementConfig,
       activeSensor: state.sensor.activeSensor
     };
 };
@@ -38,7 +39,7 @@ export default class TrackerStatus extends React.Component{
           <ButtonGroup>
             <Button bsStyle="success" bsSize="xsmall">connected</Button>
             <Button bsSize="xsmall">{this.props.activeSensor}</Button>
-            <Button bsStyle="warning" bsSize="xsmall">placeholder</Button>
+            <Button bsStyle="warning" bsSize="xsmall">{this.props.measurementConfig}</Button>
           </ButtonGroup>
         )
       }
@@ -46,7 +47,7 @@ export default class TrackerStatus extends React.Component{
         <ButtonGroup>
           <Button bsStyle="danger" bsSize="xsmall">not connected</Button>
           <Button bsSize="xsmall">{this.props.activeSensor}</Button>
-          <Button bsStyle="warning"bsSize="xsmall">placeholder</Button>
+          <Button bsStyle="warning"bsSize="xsmall">{this.props.measurementConfig}</Button>
         </ButtonGroup>
       )
   }

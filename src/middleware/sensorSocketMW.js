@@ -10,6 +10,8 @@ import { chooseFaroIonRequest, chooseFaroIonSuccessful, chooseFaroIonFail,
         initActionRequest, initActionSuccessful, initActionFail,
         twoSideMeasurementRequest, twoSideMeasurementSuccessful, twoSideMeasurementSuccessFail
        } from '../actions/sensorActions';
+import {twoSideMeasConfigRequest, twoSideMeasConfigSuccessful, twoSideMeasConfigFail
+       } from '../actions/trackerUtilActions'
 import {
      CONNECT_SENSOR_REQUEST,
      CONNECT_SENSOR_SUCCESSFUL,
@@ -56,7 +58,9 @@ import {
      TWO_SIDE_MEASURE_ACTION_FAIL
 
 } from '../actions/sensorActions';
-
+import { TWO_SIDE_MEASCONFIG_REQUEST,
+       TWO_SIDE_MEASCONFIG_SUCCESSFUL,
+       TWO_SIDE_MEASCONFIG_FAIL} from '../actions/trackerUtilActions'
 // script variables
 let activeCmd = { id: 0, type: ''}
 let websocket;
@@ -298,6 +302,11 @@ export  const sensorSocketMiddleware = store => next => action => {
           measure();
             break;
         }
+        case TWO_SIDE_MEASCONFIG_REQUEST: {
+          console.log('MW TWO_SIDE_MEASCONFIG_REQUEST')
+          twoSideMeasurementConfig();
+            break;
+    }
     return result;
 };
 }
