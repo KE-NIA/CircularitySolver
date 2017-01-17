@@ -3,9 +3,9 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import { Route, Router, hashHistory, IndexRoute } from 'react-router';
-import TrackerUtilities from './TrackerUtilities';
+import StartScreen from './StartScreen';
 import TrackerNavBar from './TrackerNavBar';
-import FaceCheck from './FaceCheck';
+import MeasureRefPlane from './MeasureRefPlane';
 
 
 export default class App extends React.Component {
@@ -21,9 +21,9 @@ export default class App extends React.Component {
     return (
       <Router history={hashHistory}>
         <Route path="/" component={TrackerNavBar}>
-          <IndexRoute component={TrackerUtilities} />
-          <Route path="/trackerutilities" component={TrackerUtilities} />
-          <Route path="/facecheck" component={FaceCheck} />
+          <IndexRoute component={StartScreen} />
+          <Route path="/startscreen" component={StartScreen} />
+          <Route path="/measurrefplane" component={MeasureRefPlane} />
         </Route>
       </Router>
     );

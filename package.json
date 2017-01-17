@@ -14,7 +14,7 @@
     "bootstrap-css-only": "^3.2.0",
     "immutable": "^3.8.1",
     "react": "^0.14.7",
-    "react-bootstrap": "^0.29.4",
+    "react-bootstrap": "^0.30.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.5",
     "react-router": "^2.0.0",
