@@ -23,16 +23,25 @@ export default class StartScreen extends React.Component {
 
   render() {
     return (
-      <Grid>
-        <Row>
-        <Col xs={6} md={3}>
-          <Thumbnail href="#/MeasurRefPlane" alt="Faro Tracker" src="./assets/thumbnail.png" />
-        </Col>
-        <Col xs={6} md={3}>
-          <Thumbnail href="#/MeasurRefPlane" alt="Virtueller Tracker" src="./assets/thumbnail.png" />
-        </Col>
+      <div class= 'text-center'>
+        <h1>Please choose a Laser Tracker</h1>
+        <Grid>
+          <Row>
+            <Col xs={1} md={4}>
+              <Thumbnail href="#/MeasurRefPlane" alt="Faro Ion" src="./assets/Faroxi.jpg" />
+              <p>Faro Xi</p>
+          </Col>
+          <Col xs={6} md={3}>
+            <Thumbnail href="#/MeasurRefPlane" alt="Faro Vantage" src="./assets/thumbnail.png" />
+            <p>Faro Vantage</p>
+          </Col>
+          <Col xs={6} md={3}>
+            <Thumbnail href="#/MeasurRefPlane" alt="Virtueller Tracker" src="./assets/thumbnail.png" />
+            <p>virtueller Lasertracker</p>
+          </Col>
         </Row>
       </Grid>
+      </div>
     );
   }
 }
