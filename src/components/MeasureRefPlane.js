@@ -33,7 +33,7 @@ export default class MeasureRefPlane extends React.Component {
         </svg>
         <Grid>
           <Row className="show-grid">
-            <Col sm={6} md={3}><br/>{dummySentences.slice(0, 2).join(' ')}</Col>
+            <Col sm={6} md={4} mdOffset={4}><br/>{ dummySentences.slice(0, 2).join(' ') }</Col>
           </Row>
         </Grid>
         <Button href="#/measurecircle">Messen</Button>
