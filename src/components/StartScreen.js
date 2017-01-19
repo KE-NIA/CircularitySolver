@@ -23,10 +23,11 @@ export default class StartScreen extends React.Component {
 
   render() {
     return (
-      <div class='text-center'>
+      <div >
         <br />
         <br />
-        <h1>Let´s beginn</h1>
+        <br />
+        <h1>Lets beginn</h1>
         <h2>Please choose a Laser Tracker</h2>
         <br />
         <br />
@@ -39,7 +40,7 @@ export default class StartScreen extends React.Component {
               <p>Faro Xi</p>
           </Col>
           <Col xs={6} md={4} lg={4}>
-            <Thumbnail href="#/MeasurRefPlane" alt="Faro Vantage" src="./assets/thumbnail.png" />
+            <Thumbnail href="#/MeasurRefPlane" alt="Faro Vantage" src="./assets/vantage.jpg" />
             <p>Faro Vantage</p>
           </Col>
             <Col xs={6} md={4} lg={4}>
