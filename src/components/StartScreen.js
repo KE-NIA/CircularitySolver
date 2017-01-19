@@ -35,7 +35,7 @@ export default class StartScreen extends React.Component {
               <p>Faro Xi</p>
           </Col>
           <Col xs={6} md={4} lg={4}>
-            <Thumbnail href="#/MeasurRefPlane" alt="Faro Vantage" src="./assets/vantage.jpg" />
+            <Thumbnail href="#/MeasurRefPlane" alt="Faro Vantage" src="./assets/Vantage.jpg" />
             <p>Faro Vantage</p>
           </Col>
             <Col xs={6} md={4} lg={4}>
