@@ -24,15 +24,10 @@ export default class StartScreen extends React.Component {
   render() {
     return (
       <div >
-        <br />
-        <br />
-        <br />
+        <div style={{margin:'5%'}}>
         <h1>Lets beginn</h1>
         <h2>Please choose a Laser Tracker</h2>
-        <br />
-        <br />
-        <br />
-        <br />
+        </div>
         <Grid>
           <Row>
             <Col xs={6} md={4} lg={4}>
@@ -49,7 +44,7 @@ export default class StartScreen extends React.Component {
           </Col>
         </Row>
       </Grid>
-      </div>
+    </div>
     );
   }
 }

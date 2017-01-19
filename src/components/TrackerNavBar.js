@@ -14,7 +14,7 @@ export default class TrackerNavbar extends React.Component {
 
     return (
       <div class="text-center" >
-        <h1 class="bg-success">Circularity S0lver</h1>
+        <h1 class="bg-success">Messung der Rundheit eines Bau-Elementes</h1>
         {this.props.children}
       </div>
     )
