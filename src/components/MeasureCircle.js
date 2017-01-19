@@ -30,8 +30,8 @@ export default class MeasureCircle extends React.Component {
           <circle cx={50} cy={50} r={40} />
         </svg>
         <Grid>
-          <Row className="show-grid">
-            <Col sm={6} md={3}><br/>{dummySentences.slice(0, 2).join(' ')}</Col>
+          <Row className="show-grid" class="text-center">
+            <Col sm={6} md={4} mdOffset={4}><br/>{dummySentences.slice(0, 2).join(' ')}</Col>
           </Row>
         </Grid>
         <Button href="#/circularityresult">Messen</Button>
