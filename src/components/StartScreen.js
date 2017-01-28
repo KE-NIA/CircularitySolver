@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Grid, Row, Col, Thumbnail} from 'react-bootstrap';
+import {Grid, Row, Col, Thumbnail, Button} from 'react-bootstrap';
 
 const mapStateToProps = (state) => {
     return{
@@ -21,30 +21,31 @@ export default class StartScreen extends React.Component {
   componentDidMount(){
   }
 
-  render() {
+  render(){
     return (
-      <div >
-        <div style={{margin:'5%'}}>
-        <h1>Lets beginn</h1>
-        <h2>Please choose a Laser Tracker</h2>
-        </div>
-        <Grid>
-          <Row>
-            <Col xs={6} md={4} lg={4}>
-              <Thumbnail href="#/MeasurRefPlane" alt="Faro Ion" src="./assets/Faroxi.jpg" />
-              <p>Faro Xi</p>
+      <Grid style={{marginTop: '74px'}}>
+        <Row>
+          <Col xs={4} md={4} lg={4}>
+            <Button style={{height:'300px', width: '300px'}} href="#/measurerefplane">
+              <img style={{height:'80%'}}  alt="Faro Ion" src="./assets/ion.png" />
+              <p style={{fontSize: '24px'}}>Faro Ion</p>
+            </Button>
           </Col>
-          <Col xs={6} md={4} lg={4}>
-            <Thumbnail href="#/MeasurRefPlane" alt="Faro Vantage" src="./assets/Vantage.jpg" />
-            <p>Faro Vantage</p>
+          <Col xs={4} md={4} lg={4}>
+            <Button style={{height:'300px', width: '300px'}} href="#/measurerefplane">
+              <img style={{height:'80%'}}  alt="Faro Vantage" src="./assets/vantage.png" />
+              <p style={{fontSize: '24px'}}>Faro Vantage</p>
+            </Button>
           </Col>
-            <Col xs={6} md={4} lg={4}>
-              <Thumbnail href="#/MeasurRefPlane" alt="Virtueller Tracker" src="./assets/thumbnail.png" />
-            <p>virtueller Lasertracker</p>
+          <Col xs={4} md={4} lg={4}>
+            <Button style={{height:'300px', width: '300px'}} href="#/measurerefplane">
+              <img style={{height:'80%'}}  alt="Simulated Laser Tracker" src="./assets/simulatedTracker.png" />
+              <p style={{fontSize: '24px'}}>Simulated Laser Tracker</p>
+            </Button>
           </Col>
         </Row>
       </Grid>
-    </div>
     );
+
   }
 }
