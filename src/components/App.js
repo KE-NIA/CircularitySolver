@@ -25,7 +25,7 @@ export default class App extends React.Component {
         <Route path="/" component={TrackerNavBar}>
           <IndexRoute component={StartScreen} />
           <Route path="/startscreen" component={StartScreen} />
-          <Route path="/measurrefplane" component={MeasureRefPlane} />
+          <Route path="/measurerefplane" component={MeasureRefPlane} />
           <Route path="/measurecircle" component={MeasureCircle} />
           <Route path="/circularityresult" component={CircularityResult} />
         </Route>

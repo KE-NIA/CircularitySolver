@@ -34,7 +34,7 @@ export default class MeasureCircle extends React.Component {
               <p>Min</p>
               <p>Max</p>
               <p>arithmetic medium</p>
-              <Button href="#/measurrefplane">Noch einmal Messen</Button>
+              <Button href="#/measurerefplane">Noch einmal Messen</Button>
               <Button href="#/startscreen">zurück zur Tracker Auswahl</Button>
             </Col>
           </Row>
