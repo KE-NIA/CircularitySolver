@@ -57,7 +57,7 @@ export default class MeasureRefPlane extends React.Component {
             <Col sm={6} md={4} mdOffset={4}><br/>{ dummySentences.slice(0, 2).join(' ') }</Col>
           </Row>
         </Grid>
-        <Button style={{ fontSize: '32px' }} class="btn btn-default central-button" href="#/measurerefplane">MESSEN</Button>
+        <Button class="btn btn-default central-button" href="#/measurecircle">MESSEN</Button>
       </div>
     );
   }

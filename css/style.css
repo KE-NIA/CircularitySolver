@@ -38,37 +38,13 @@ body{
   border-radius: 50.666667px;
   background-color: #fbbd19;
   margin-top: 100px;
+  font-size: 32px;
 }
 .central-button:hover{
   background-color: #fbbd19
 }
 .central-button:visited{
   background-color: #fbbd19
-
-}
-.orange-circle-button {
-	border: .5em solid #fbbd19;
-	font-size: 1em;
-	line-height: 1.1em;
-	color: #ffffff;
-	background-color: #fbbd19;
-	margin: auto;
-	border-radius: 50%;
-	height: 7em;
-	width: 7em;
-	position: relative;
-}
-.orange-circle-button:hover {
-	color:#ffffff;
-    background-color: #fbbd19;
-	text-decoration: none;
-	border-color: #fbe8aa;
-
-}
-.orange-circle-button:visited {
-	color:#ffffff;
-    background-color: #fbbd19;
-	text-decoration: none;
 
 }
 
