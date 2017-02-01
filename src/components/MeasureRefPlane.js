@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Grid, Row, Col } from 'react-bootstrap'
 import CircleSvg from './CircleSvg';
+import { router } from 'react-router';
 
 const mapStateToProps = (state) => {
     return{
@@ -17,11 +18,45 @@ export default class MeasureRefPlane extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.state = {
+      pointOne: { status: 'active' },
+      pointTwo: { status: 'deactive' },
+      pointThree: { status: 'deactive' },
+      pointFour: { status: 'deactive' }
+    }
+    this.onMeasure = this.onMeasure.bind(this);
   }
-
   componentDidMount(){
   }
+  onMeasure() {
+    if (this.state.pointOne.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointOne: { status: 'measured' },
+        pointTwo: { status: 'active' },
+      });
+    } else if (this.state.pointTwo.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointTwo: { status: 'measured' },
+        pointThree: { status: 'active' },
+      });
+    } else if (this.state.pointThree.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointThree: { status: 'measured' },
+        pointFour: { status: 'active' },
+      });
+    } else if (this.state.pointFour.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointFour: { status: 'measured' },
+      });
+    } else {
+      router.push('/MeasureCircle');
+    }
+  }
+
 
   render() {
     const dummySentences = ['If You want to measure a Reference-Plane, you need 4 Points,Please Measure a point at the marked location'];
@@ -29,13 +64,19 @@ export default class MeasureRefPlane extends React.Component {
     return (
       <div style={{marginTop: '74px'}}>
         <h2>'Please measure 4 points on the flange'</h2>
-        <CircleSvg showFlangePoints={true} />
+        <CircleSvg
+          pointOne={this.state.pointOne}
+          pointTwo={this.state.pointTwo}
+          pointThree={this.state.pointThree}
+          pointFour={this.state.pointFour}
+          showFlangePoints={true}
+        />
         <Grid>
           <Row className="show-grid">
             <Col sm={6} md={4} mdOffset={4}><br/>{ dummySentences.slice(0, 2).join(' ') }</Col>
           </Row>
         </Grid>
-        <Button class="btn btn-default central-button" href="#/measurecircle">MESSEN</Button>
+        <Button class="btn btn-default central-button" onClick={this.onMeasure}>MEASURE</Button>
       </div>
     );
   }

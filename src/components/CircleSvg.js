@@ -12,6 +12,18 @@ export default class CircleSvg extends React.Component {
     const LIGHTGREY = '#cbcbcb';
     const DARKGREY = '#616161';
 
+    const getFillColor = (status) => {
+      if (status === 'measured') {
+        return GREEN;
+      }
+      return 'white';
+    };
+    const getBorderColor = (status) => {
+      if (status === 'active') {
+        return BLUE;
+      }
+      return LIGHTGREY;
+    }
     // tube
     let svgSize = 400;
     let circleBorder = 40;
@@ -26,14 +38,20 @@ export default class CircleSvg extends React.Component {
     if(this.props.showFlangePoints) {
       flangePoints = (
         <g>
-          <circle cx={refPos} cy={refPos} r={measPointSize} fill={LIGHTGREY} />
-          <circle cx={refPos} cy={refPos} r={measPointSize - measPointBoarder} fill={'white'} />
-          <circle cx={svgSize - refPos} cy={refPos} r={measPointSize} fill={LIGHTGREY} />
-          <circle cx={svgSize - refPos} cy={refPos} r={measPointSize - measPointBoarder} fill={'white'} />
-          <circle cx={refPos} cy={svgSize - refPos} r={measPointSize} fill={BLUE} />
-          <circle cx={refPos} cy={svgSize - refPos} r={measPointSize - measPointBoarder} fill={'white'} />
-          <circle cx={svgSize - refPos} cy={svgSize - refPos} r={measPointSize} fill={LIGHTGREY} />
-          <circle cx={svgSize - refPos} cy={svgSize - refPos} r={measPointSize - measPointBoarder} fill={GREEN} />
+          {/*Point Top Left */}
+          <circle cx={svgSize - refPos} cy={svgSize - refPos} r={measPointSize} fill={getBorderColor(this.props.pointOne.status)} />
+          <circle cx={svgSize - refPos} cy={svgSize - refPos} r={measPointSize - measPointBoarder} fill={getFillColor(this.props.pointOne.status)} />
+          {/*Point Top Right */}
+          <circle cx={refPos} cy={svgSize - refPos} r={measPointSize} fill={getBorderColor(this.props.pointTwo.status)} />
+          <circle cx={refPos} cy={svgSize - refPos} r={measPointSize - measPointBoarder} fill={getFillColor(this.props.pointTwo.status)} />
+          {/*Point Bottom Right */}
+          <circle cx={refPos} cy={refPos} r={measPointSize} fill={getBorderColor(this.props.pointThree.status)} />
+          <circle cx={refPos} cy={refPos} r={measPointSize - measPointBoarder} fill={getFillColor(this.props.pointThree.status)} />
+          {/*Point Bottom Left */}
+          <circle cx={svgSize - refPos} cy={refPos} r={measPointSize} fill={getBorderColor(this.props.pointFour.status)} />
+          <circle cx={svgSize - refPos} cy={refPos} r={measPointSize - measPointBoarder} fill={getFillColor(this.props.pointFour.status)} />
+
+
         </g>
       );
     }

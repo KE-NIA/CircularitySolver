@@ -46,7 +46,12 @@ body{
 }
 .central-button:visited{
   background-color: #0261ba
-
+}
+.central-button:active{
+  background-color: #0261ba
+}
+.central-button:focus{
+  background-color: #0261ba
 }
 
 .orange-circle-link-greater-than {
