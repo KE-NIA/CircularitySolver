@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Grid, Row, Col } from 'react-bootstrap'
+import CircleSvg from './CircleSvg';
+import { router } from 'react-router';
 
 const mapStateToProps = (state) => {
     return{
@@ -16,48 +18,65 @@ export default class MeasureRefPlane extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.state = {
+      pointOne: { status: 'active' },
+      pointTwo: { status: 'deactive' },
+      pointThree: { status: 'deactive' },
+      pointFour: { status: 'deactive' }
+    }
+    this.onMeasure = this.onMeasure.bind(this);
   }
-
   componentDidMount(){
   }
+  onMeasure() {
+    if (this.state.pointOne.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointOne: { status: 'measured' },
+        pointTwo: { status: 'active' },
+      });
+    } else if (this.state.pointTwo.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointTwo: { status: 'measured' },
+        pointThree: { status: 'active' },
+      });
+    } else if (this.state.pointThree.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointThree: { status: 'measured' },
+        pointFour: { status: 'active' },
+      });
+    } else if (this.state.pointFour.status === 'active') {
+      this.setState({
+        ...this.state,
+        pointFour: { status: 'measured' },
+      });
+    } else {
+      router.push('/MeasureCircle');
+    }
+  }
+
 
   render() {
     const dummySentences = ['If You want to measure a Reference-Plane, you need 4 Points,Please Measure a point at the marked location'];
 
-    let letterStyle = {
-      padding: 10,
-      margin: 10,
-      backgroundColor: "#ffde00",
-      color: "#333",
-      display: "inline-block",
-      fontFamily: "monospace",
-      fontSize: "32",
-      textAlign: "center"
-    };
-    let buttonstyle = {
-      paddingTop: 30,
-      paddingBottom: 30,
-      paddingLeft: 50,
-      paddingRight: 50,
-      borderRadius: 50.666667,
-      backgroundColor: "#fbbd19",
-      marginTop: 100,
-
-    };
     return (
-      <div>
-        <h2>Bitte Messen Sie 4 Punkte</h2>
-        <svg width={100} height={100}>
-          <circle cx={50} cy={50} r={40} />
-          <rect />
-        </svg>
+      <div style={{marginTop: '74px'}}>
+        <h2>'Please measure 4 points on the flange'</h2>
+        <CircleSvg
+          pointOne={this.state.pointOne}
+          pointTwo={this.state.pointTwo}
+          pointThree={this.state.pointThree}
+          pointFour={this.state.pointFour}
+          showFlangePoints={true}
+        />
         <Grid>
           <Row className="show-grid">
             <Col sm={6} md={4} mdOffset={4}><br/>{ dummySentences.slice(0, 2).join(' ') }</Col>
           </Row>
         </Grid>
-        <Button style={{ fontSize: '32px' }} class="btn btn-default central-button" href="#/measurerefplane">MESSEN</Button>
+        <Button class="btn btn-default central-button" onClick={this.onMeasure}>MEASURE</Button>
       </div>
     );
   }
