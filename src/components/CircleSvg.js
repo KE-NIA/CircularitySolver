@@ -25,16 +25,20 @@ export default class CircleSvg extends React.Component {
       return LIGHTGREY;
     }
     // tube
-    let svgSize = 400;
-    let circleBorder = 40;
+    let svgSize = 300;
+    let circleBorder = 20;
     let circleCenter = svgSize / 2.0;
 
     // measPoint
-    let measPointSize = 40;
-    let measPointBoarder = 16;
+    let measPointSize = 20;
+    let measPointBoarder = 10;
     let refPos = circleCenter + (Math.sin(Math.PI * 0.25) * (circleCenter - (circleBorder * 0.5)));
 
+    // innerDiameter position
+    let posInnerSmr = refPos - circleBorder/2.0 - measPointSize/2.0;
+
     let flangePoints = null;
+    let innerSmr = null;
     if(this.props.showFlangePoints) {
       flangePoints = (
         <g>
@@ -50,10 +54,21 @@ export default class CircleSvg extends React.Component {
           {/*Point Bottom Left */}
           <circle cx={svgSize - refPos} cy={refPos} r={measPointSize} fill={getBorderColor(this.props.pointFour.status)} />
           <circle cx={svgSize - refPos} cy={refPos} r={measPointSize - measPointBoarder} fill={getFillColor(this.props.pointFour.status)} />
-
-
         </g>
       );
+    } else if (this.props.showInnerSmr) {
+      const startPosSmr = `0 ${circleCenter} ${circleCenter}`
+      const endPosSmr = `360 ${circleCenter} ${circleCenter}`
+      innerSmr = (
+        <circle cx={posInnerSmr} cy={posInnerSmr} r={measPointSize} fill={BLUE}>
+          <animateTransform attributeName="transform"
+                       type="rotate"
+                       from={startPosSmr}
+                       to={endPosSmr}
+                       dur="10s"
+                       repeatCount="indefinite"/>
+        </circle>
+      )
     }
 
     return (
@@ -61,6 +76,7 @@ export default class CircleSvg extends React.Component {
         <circle cx={circleCenter} cy={circleCenter} r={circleCenter} fill={DARKGREY} />
         <circle cx={circleCenter} cy={circleCenter} r={circleCenter - circleBorder} fill={'white'} />
         {flangePoints}
+        {innerSmr}
       </svg>
     );
   }

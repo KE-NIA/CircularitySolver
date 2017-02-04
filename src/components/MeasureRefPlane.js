@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Grid, Row, Col } from 'react-bootstrap'
 import CircleSvg from './CircleSvg';
-import { router } from 'react-router';
+import { hashHistory } from 'react-router';
 
 const mapStateToProps = (state) => {
     return{
@@ -52,8 +52,9 @@ export default class MeasureRefPlane extends React.Component {
         ...this.state,
         pointFour: { status: 'measured' },
       });
+      hashHistory.push('/measurecircle');
     } else {
-      router.push('/MeasureCircle');
+
     }
   }
 
@@ -62,7 +63,7 @@ export default class MeasureRefPlane extends React.Component {
     const dummySentences = ['If You want to measure a Reference-Plane, you need 4 Points,Please Measure a point at the marked location'];
 
     return (
-      <div style={{marginTop: '74px'}}>
+      <div style={{marginTop: '44px'}}>
         <h2>'Please measure 4 points on the flange'</h2>
         <CircleSvg
           pointOne={this.state.pointOne}
@@ -70,6 +71,7 @@ export default class MeasureRefPlane extends React.Component {
           pointThree={this.state.pointThree}
           pointFour={this.state.pointFour}
           showFlangePoints={true}
+          showInnerSmr = {false}
         />
         <Grid>
           <Row className="show-grid">

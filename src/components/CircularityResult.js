@@ -22,23 +22,9 @@ export default class MeasureCircle extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Ergebnis</h2>
-        <Grid>
-            <Row>
-              <Col xs={6} md={4} lg={6}>
-                <Thumbnail  alt="Faro Ion" src="./assets/result.jpg" />
-                <p>Darstellung Rundheit</p>
-              </Col>
-              <Col>
-              <p>Min</p>
-              <p>Max</p>
-              <p>arithmetic medium</p>
-              <Button href="#/measurerefplane">Noch einmal Messen</Button>
-              <Button href="#/startscreen">zurück zur Tracker Auswahl</Button>
-            </Col>
-          </Row>
-        </Grid>
+      <div class=" circularity-result-justification" >
+        <div class=" circularity-result">Circularity: 0.25 mm </div>
+          <i style= {{ marginTop: '50px' }} class="fa fa-thumbs-o-up fa-5x"></i>
 
       </div>
     );
