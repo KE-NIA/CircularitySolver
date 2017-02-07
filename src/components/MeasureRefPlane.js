@@ -60,22 +60,25 @@ export default class MeasureRefPlane extends React.Component {
 
 
   render() {
-    const dummySentences = ['If You want to measure a Reference-Plane, you need 4 Points,Please Measure a point at the marked location'];
-
+    const first = ['The blue circle shows, where you can place the reflektor.',<br/>,
+      'Press "Measure" to record a point.'];
+    const second = ['The green circle shows,if your record was successful.',<br/>,
+      'You need 4 points to complete this task.'];
     return (
-      <div style={{marginTop: '44px'}}>
-        <h2>'Please measure 4 points on the flange'</h2>
+      <div style={{ marginTop: '44px' }}>
+        <h2>Please measure 4 points on the flange</h2>
         <CircleSvg
           pointOne={this.state.pointOne}
           pointTwo={this.state.pointTwo}
           pointThree={this.state.pointThree}
           pointFour={this.state.pointFour}
           showFlangePoints={true}
-          showInnerSmr = {false}
+          showInnerSmr={false}
         />
         <Grid>
           <Row className="show-grid">
-            <Col sm={6} md={4} mdOffset={4}><br/>{ dummySentences.slice(0, 2).join(' ') }</Col>
+            <Col sm={6} md={4} mdOffset={4}><br/>{first} </Col>
+            <Col sm={6} md={4} mdOffset={4}>{second} </Col>
           </Row>
         </Grid>
         <Button class="btn btn-default central-button" onClick={this.onMeasure}>MEASURE</Button>
