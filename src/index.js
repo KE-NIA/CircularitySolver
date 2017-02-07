@@ -9,7 +9,7 @@ import {initWebSocket} from './middleware/sensorSocketMW'
 
 //create and configure store
 const store = configureStore();
-initWebSocket(store);
+//initWebSocket(store);
 
 render(
   <Provider store={store}>
